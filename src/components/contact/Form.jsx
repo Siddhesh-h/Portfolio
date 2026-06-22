@@ -71,6 +71,8 @@ export default function Form() {
         } catch (error) {
             console.error(error);
             toast.error("Failed to send message");
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -200,7 +202,7 @@ export default function Form() {
             <button
                 type="submit"
                 disabled={loading}
-                className="w-full h-14 rounded-full bg-text-primary text-bg-primary font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_35px_rgba(255,255,255,0.25)]"
+                className={`w-full h-14 rounded-full bg-text-primary text-bg-primary font-semibold transition-all duration-300 ${loading ? "opacity-70 cursor-not-allowed" : "hover:-transition-y-1  hover:shadow-[0_0_35px_rgba(255,255,255,0.25)]"}`}
             >
                 {loading ? "Sending..." : "Send Message"}
             </button>
