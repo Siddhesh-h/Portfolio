@@ -6,7 +6,7 @@ export default function Project({
     demoLink,
 }) {
     return (
-        <div className="group bg-glass-bg border border-glass-border rounded-2xl overflow-hidden transiton-all duration-600 hover:border-text-primary hover:-translate-y-3">
+        <div className="group bg-glass-bg border border-glass-border rounded-2xl overflow-hidden transition-all duration-600 hover:border-text-primary hover:-translate-y-1 md:hover:-translate-y-3">
             {/* Image Section */}
             <div className="relative w-full pb-[60%] overflow-hidden bg-bg-secondary">
                 <img
@@ -15,12 +15,12 @@ export default function Project({
                     className="absolute top-0 left-0 w-full h-full object-cover max-w-full block"
                 />
                 {/* Overlay */}
-                <div className="absolute inset-0 top-0 left-0 w-full height-full bg-[rgba(0,0,0,0.7)] flex items-center justify-center opacity-0 z-5 transition-all duration-300 group-hover:opacity-100">
+                <div className="absolute inset-0 top-0 left-0 w-full height-full bg-[rgba(0,0,0,0.7)] flex items-center justify-center opacity-0 z-10 transition-all duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100">
                     <div className="flex gap-4">
                         <a
                             href={demoLink}
                             target="_blank"
-                            className="bg-text-primary text-bg-primary border-text-primary py-[10px] px-[20px] rounded-lg no-underline text-sm font-semibold flex text-center gap-4 border-2 border-transparent hover:border-text-primary transition"
+                            className="bg-text-primary text-bg-primary border-text-primary py-2 px-4 md:px-5 rounded-lg no-underline text-sm font-semibold flex text-center gap-4 border-2 border-transparent hover:border-text-primary transition"
                         >
                             <i className="fas fa-external-link-alt"></i>
                             Live Demo
@@ -29,8 +29,8 @@ export default function Project({
                 </div>
             </div>
             {/* Content */}
-            <div className="p-8">
-                <h3 className="text-xl font-bold mb-2 text-text-primary">
+            <div className="p-5 md:p-8">
+                <h3 className="text-lg md:text-xl font-bold mb-2 text-text-primary">
                     {heading}
                 </h3>
                 <p className="text-sm text-text-tertiary mb-4 leading-[1.6]">

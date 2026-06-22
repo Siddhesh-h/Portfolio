@@ -6,18 +6,18 @@ export default function AboutMain() {
     return (
         <>
             <section
-                className="bg-bg-secondary text-text-primary py-[96px] px-[32px]"
+                className="bg-bg-secondary text-text-primary py-16 md:py-24 px-4 md:px-8"
                 id="about"
             >
-                <div className="w-[100%] max-w-[1200px] m-auto px-0 py-[15px]">
+                <div className="w-full max-w-[1200px] m-auto px-0 py-[15px]">
                     <div className="text-center mb-[4rem]">
-                        <h1 className="text-5xl font-black font-['Space_Grotesk',_sans-serif] mb-[1rem]">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black font-['Space_Grotesk',_sans-serif] mb-4">
                             About Me
                         </h1>
                         <div className="w-[80px] h-[4px] bg-text-primary mt-[1rem] mx-auto rounded-xl"></div>
                     </div>
 
-                    <div className="grid auto-cols-1 md:grid-cols-3 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                         <About
                             icon={
                                 <User
@@ -94,7 +94,7 @@ export default function AboutMain() {
                         />
                     </div>
 
-                    <div className="flex justify-center gap-5 mt-[40px]">
+                    <div className="flex flex-col sm:flex-row justify-center gap-5 mt-10">
                         <Completed number="3" title="+ PROJECTS" />
                         <Completed number="12" title="TECHNOLOGIES" />
                         <Completed number="100" title="% DEDICATION" />

@@ -45,6 +45,8 @@ export default function Form() {
 
         if (!validate()) return;
 
+        setLoading(true);
+
         try {
             await emailjs.send(
                 import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -74,12 +76,12 @@ export default function Form() {
 
     return (
         <form
-            className="grid grid-row-6 backdrop-blur-[10px] relative gap-8 bg-glass-bg border border-glass-border p-12 rounded-2xl overflow-hidden text-text-primary"
+            className="flex flex-col backdrop-blur-[10px] relative gap-8 bg-glass-bg border border-glass-border p-6 md:p-12 rounded-2xl overflow-hidden text-text-primary"
             onSubmit={handleSubmit}
         >
             {/* Header */}
 
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 md:mb-16">
                 <h3 className="text-xl font-bold text-text-primary mb-2">
                     Send Me a Message
                 </h3>

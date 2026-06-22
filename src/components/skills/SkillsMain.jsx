@@ -11,25 +11,23 @@ import {
     SiMongodb,
     SiExpress,
     SiDocker,
-    SiPrisma,
     SiTypescript,
-    SiTailwindcss,
 } from "react-icons/si";
 
 export default function SkillsMain() {
     return (
         <section
             id="skills"
-            className="relative z-10 py-[6rem] px-[2rem] text-text-primary"
+            className="relative z-10 py-16 md:py-24 px-4 md:px-8 text-text-primary"
         >
-            <div className="w-[100%] max-w-[1200px] m-auto px-[15px] box-border">
+            <div className="w-full max-w-[1200px] mx-auto px-0 md:px-4 box-border">
                 <div className="text-center mb-[4rem]">
-                    <h2 className="text-5xl font-black mb-[2rem]">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-[2rem]">
                         Skills & Technologies
                     </h2>
                     <div className="w-[80px] h-[4px] bg-text-primary mt-[1rem] mx-auto rounded-xs"></div>
                 </div>
-                <div className="grid grid-cols-4 gap-5 w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                     <Skills
                         icon={<SiHtml5 />}
                         heading={"HTML5"}

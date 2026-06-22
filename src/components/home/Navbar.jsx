@@ -5,7 +5,6 @@ export default function Navbar({ theme, setTheme }) {
     const [showNav, setShowNav] = useState(true);
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState("home");
-    const [darkMode, setDarkMode] = useState(true);
 
     useEffect(() => {
         const sections = document.querySelectorAll("section");
@@ -70,14 +69,18 @@ export default function Navbar({ theme, setTheme }) {
         ${scrolled ? "backdrop-blur-xl bg-text-primary/[0.03]" : ""}
     `}
         >
-            <div className="max-w-[1200px] mx-auto px-5 py-5 flex items-center justify-between">
+            <div className="max-w-[1200px] mx-auto px-4 md:px-5 py-4 md:py-5 flex items-center justify-between">
                 <div>
-                    <span className="font-bold text-3xl">Siddhesh</span>
+                    <span className="font-bold text-xl sm:text-2xl md:text-3xl">
+                        Siddhesh
+                    </span>
 
-                    <span className="font-extrabold text-3xl ml-2">.</span>
+                    <span className="font-extrabold text-xl sm:text-2xl md:text-3xl ml-2">
+                        .
+                    </span>
                 </div>
 
-                <ul className="flex gap-8">
+                <ul className="hidden md:flex gap-8">
                     <li>
                         <a
                             href="#home"
@@ -147,8 +150,10 @@ export default function Navbar({ theme, setTheme }) {
                             flex
                             px-3
                             relative
-                            w-[70px]
-                            h-[34px]
+                            w-[60px]
+                            md:w-[70px]
+                            h-[30px]
+                            md:h-[34px]
                             border
                             border-glass-border
                             rounded-full
@@ -159,10 +164,10 @@ export default function Navbar({ theme, setTheme }) {
                         "
                     >
                         <Moon size={16} />
-                        <Sun size={16} />
+                        <Sun size={15} />
 
                         <span
-                            className={`absolute w-[22px] h-[22px] rounded-full bg-text-primary transition-all duration-300 ${theme === "light" ? "translate-x-[27px]" : ""}`}
+                            className={`absolute left-1 w-[22px] md:w-[24px] h-[22px] md:h-[24px] rounded-full bg-text-primary transition-all duration-300 ${theme === "light" ? "translate-x-[28px] md:translate-x-[35px]" : ""}`}
                         ></span>
                     </label>
                 </div>
