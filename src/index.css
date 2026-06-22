@@ -1,0 +1,334 @@
+@import "tailwindcss";
+
+
+body {
+    background: var(--color-bg-primary);
+    background-size: 80px 80px;
+}
+
+html,
+body,
+#root {
+    min-height: 100%;
+}
+
+
+@theme {
+    --color-bg-primary: #000000;
+    --color-bg-secondary: #0a0a0a;
+    --color-bg-tertiary: #111111;
+
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #e0e0e0;
+    --color-text-tertiary: #999999;
+
+    --color-glass-bg: rgba(255, 255, 255, 0.03);
+    --color-glass-border: rgba(255, 255, 255, 0.08);
+
+    --color-border-color: rgba(255, 255, 255, 0.1);
+}
+
+.light {
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f8f9fa;
+    --color-bg-tertiary: #eeeeee;
+
+    --color-text-primary: #111111;
+    --color-text-secondary: #333333;
+    --color-text-tertiary: #666666;
+
+    --color-glass-bg: rgba(0, 0, 0, 0.03);
+    --color-glass-border: rgba(0, 0, 0, 0.08);
+
+    --color-border-color: rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+strong{
+    color: var(--color-text-primary);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/***** Nav underline *****/ 
+
+.nav-link {
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0%;
+    height: 2px;
+
+    background: var(--color-text-primary);
+
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+ /***** End Nav underline *****/
+
+
+
+/***** Animations Background *****/ 
+
+/* ===== Floating Shapes ===== */
+
+/***************************
+    FLOATING SHAPES
+****************************/
+
+.shape {
+    position: absolute;
+    opacity: 0.70;
+    
+}
+
+/***************************
+    CIRCLES
+****************************/
+
+.circle {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/***************************
+    SQUARES
+****************************/
+
+.square {
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/***************************
+    DIAMONDS
+****************************/
+
+.diamond {
+    width: 70px;
+    height: 70px;
+    background: rgba(255,255,255,0.04);
+    transform: rotate(45deg);
+}
+
+/***************************
+    TRIANGLE
+****************************/
+
+.triangle {
+    width: 0;
+    height: 0;
+
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+
+    border-bottom: 70px solid rgba(255,255,255,0.06);
+}
+
+/***************************
+    GLOWS
+****************************/
+
+.glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.1;
+    animation: glowDrift 20s ease-in-out infinite;
+}
+
+/* Top Left */
+
+.glow-top-left {
+    width: 280px;
+    height: 280px;
+
+    background: var(--color-text-primary);
+
+    top: -50px;
+    left: -50px;
+}
+
+/* Center Right */
+
+.glow-center-right {
+    width: 260px;
+    height: 260px;
+
+    background: var(--color-text-primary);
+
+    top: 20%;
+    right: 8%;
+}
+
+/* Bottom Right */
+
+.glow-bottom-right {
+    width: 320px;
+    height: 320px;
+
+    background: var(--color-text-primary);
+
+    bottom: -100px;
+    right: -60px;
+}
+
+.glow-bottom-left {
+    width: 300px;
+    height: 300px;
+
+    background: var(--color-text-primary);
+
+    bottom: 5%;
+    right: 50%;
+}
+
+/***************************
+    STARS
+****************************/
+
+.star {
+    position: absolute;
+
+    background: rgba(255,255,255,0.9);
+
+    border-radius: 9999px;
+
+    box-shadow:
+        0 0 6px rgba(255,255,255,0.8),
+        0 0 12px rgba(255,255,255,0.4);
+}
+
+.star-sm {
+    width: 2px;
+    height: 2px;
+}
+
+.star-md {
+    width: 3px;
+    height: 3px;
+}
+
+.star-lg {
+    width: 5px;
+    height: 5px;
+}
+
+/***************************
+    Footer
+****************************/
+
+
+/***************************
+    STAR MOVEMENT
+****************************/
+
+.star-a {
+    animation: driftA 20s linear infinite;
+}
+
+.star-b {
+    animation: driftB 25s linear infinite;
+}
+
+.star-c {
+    animation: driftC 30s linear infinite;
+}
+
+@keyframes driftA {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(20px,-15px); }
+    100% { transform: translate(0,0); }
+}
+
+@keyframes driftB {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-15px,20px); }
+    100% { transform: translate(0,0); }
+}
+
+@keyframes driftC {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(25px,10px); }
+    100% { transform: translate(0,0); }
+}
+
+/***************************
+    SHAPE MOVEMENT
+****************************/
+
+.float-slow {
+    animation: floatSlow 25s ease-in-out infinite;
+}
+
+.float-medium {
+    animation: floatMedium 18s ease-in-out infinite;
+}
+
+.float-fast {
+    animation: floatFast 12s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+    0% { transform: translate(0,0) rotate(0deg); }
+    50% { transform: translate(30px,-35px) rotate(8deg); }
+    100% { transform: translate(0,0) rotate(0deg); }
+}
+
+@keyframes floatMedium {
+    0% { transform: translate(0,0) rotate(0deg); }
+    50% { transform: translate(-20px,25px) rotate(-8deg); }
+    100% { transform: translate(0,0) rotate(0deg); }
+}
+
+@keyframes floatFast {
+    0% { transform: translate(0,0) rotate(0deg); }
+    50% { transform: translate(20px,-20px) rotate(12deg); }
+    100% { transform: translate(0,0) rotate(0deg); }
+}
+
+/***************************
+    GLOW MOVEMENT
+****************************/
+
+
+@keyframes glowDrift {
+    0% {
+        transform: translate(0px,0px);
+    }
+
+    50% {
+        transform: translate(80px,-80px);
+    }
+
+    100% {
+        transform: translate(0px,0px);
+    }
+}
+
+
+/***** End Animations Background *****/
