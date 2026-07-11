@@ -15,11 +15,22 @@ export default function ProjectMain() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                     <Project
-                        image="/images/Portfolio.jpg"
-                        heading="Portfolio Website"
-                        description="Personal portfolio website showcasing projects, skills, experience, and achievements through a modern and interactive design."
-                        demoLink=""
-                        tech={["React", "Tailwind", "JavaScript"]}
+                        image="/images/landing-page.JPG"
+                        heading="TradeX - Full Stack Trading Platform"
+                        description="Built a full-stack stock trading platform with JWT authentication, simulated real-time market updates, portfolio and fund management, order execution, responsive dashboards, Docker containerization, and cloud deployment."
+                        demoLink="https://tradex-frontend-nu.vercel.app/"
+                        tech={[
+                            "React",
+                            "Tailwind CSS",
+                            "Node.js",
+                            "Express.js",
+                            "Prisma",
+                            "PostgreSQL",
+                            "JWT",
+                            "Docker",
+                            "Vercel",
+                            "Render",
+                        ]}
                     />
                 </div>
             </div>
